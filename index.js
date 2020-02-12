@@ -4,7 +4,9 @@ $(function() {
   $('h1').css('color', 'red');
   $('#js-shopping-list-form').submit(event => {
     event.preventDefault();
-    let input = $(event.currentTarget).find('input[name="shopping-list-entry"]').val();
+    let input = $(event.currentTarget)
+      .find('input[name="shopping-list-entry"]')
+      .val();
 
     $('.shopping-list').append(`<li>
     <span class="shopping-item">${input}</span>
@@ -19,15 +21,17 @@ $(function() {
   </li>`);
 
     $('#shopping-list-entry').val('');
-
   });
 
   $('.shopping-item-toggle').on('click', event => {
-    $(event.currentTarget).closest('li').toggleClass('shopping-item__checked');
-  })
+    $(event.currentTarget)
+      .closest('li')
+      .toggleClass('shopping-item__checked');
+  });
 
   $('.shopping-item-delete').on('click', event => {
-    $(event.currentTarget).closest('li').remove();
-  })
-
+    $(event.currentTarget)
+      .closest('li')
+      .remove();
+  });
 });
