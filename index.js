@@ -5,9 +5,9 @@ $(function() {
 
   let list1 = $('.shopping-list');
 
-  $('#js-shopping-list-form').submit(event => {
+  $('#js-shopping-list-form').submit(function(event) {
     event.preventDefault();
-    let input = $(event.currentTarget)
+    let input = $(this)
       .find('input[name="shopping-list-entry"]')
       .val();
 
